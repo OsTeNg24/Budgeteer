@@ -1,2 +1,2 @@
 # Budgeteer
-Creation of application used to asssist individuals with proper budgetting strategies.
+Creation of application used to asssist individuals with proper budgetting strategies, and track expenses.
