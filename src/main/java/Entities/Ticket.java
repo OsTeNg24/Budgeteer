@@ -47,7 +47,7 @@ public class Ticket {
             case 4:
                 return "Leisure";
             case 5:
-                return "Work";
+                return "Income";
             case 6:
                 return "Gift";
         }
