@@ -4,7 +4,7 @@ import java.io.IOException;
 
 public class Ticket {
     private String desc;
-    private float total;
+    private double total;
     private int type;
     private String typedesc;
     /**
@@ -16,7 +16,7 @@ public class Ticket {
      *                 transaction if it was an non-traditional transaction.
      * @throws IOException
      */
-    public Ticket(String desc, float total, int type, String typedesc) throws IOException {
+    public Ticket(String desc, double total, int type, String typedesc) throws IOException {
         this.desc = desc;
         this.total = total;
         this.type = type;
@@ -25,7 +25,7 @@ public class Ticket {
     public String getDesc() {
         return this.desc;
     }
-    public float getTotal() {
+    public double getTotal() {
         return this.total;
     }
     public int getType() {
@@ -35,22 +35,15 @@ public class Ticket {
         return this.typedesc;
     }
     public String getTypeToString() {
-        switch (this.type) {
-            case 0:
-                return "Other";
-            case 1:
-                return "Rent";
-            case 2:
-                return "Groceries";
-            case 3:
-                return "Utilities";
-            case 4:
-                return "Leisure";
-            case 5:
-                return "Income";
-            case 6:
-                return "Gift";
-        }
-        return "";
+        return switch (this.type) {
+            case 0 -> "Other";
+            case 1 -> "Rent";
+            case 2 -> "Groceries";
+            case 3 -> "Utilities";
+            case 4 -> "Leisure";
+            case 5 -> "Income";
+            case 6 -> "Gift";
+            default -> "";
+        };
     }
 }

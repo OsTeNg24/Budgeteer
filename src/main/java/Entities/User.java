@@ -1,13 +1,12 @@
 package Entities;
 import java.io.IOException;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.Paths;
 
 public class User {
     private String username;
     private String password;
-    private Path budgetFilePath;
+    private String budgetFilePath;
 
     /**
      * Creates new User with provided username and password
@@ -18,8 +17,8 @@ public class User {
     public User(String username, String password) throws IOException {
         this.username = username;
         this.password = password;
-        this.budgetFilePath = Paths.get(("src/main/java/data/"+username+".csv"));
-        Files.createFile(budgetFilePath);
+        this.budgetFilePath = "src/main/java/data/"+username+".csv";
+        Files.createFile(Paths.get(budgetFilePath));
     }
 
     public String getUsername() {
@@ -28,7 +27,7 @@ public class User {
     public String getPassword() {
         return this.password;
     }
-    public Path getBudgetFilePath() {
+    public String getBudgetFilePath() {
         return this.budgetFilePath;
     }
     public void changeUsername(String newName) {

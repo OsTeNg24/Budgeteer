@@ -10,23 +10,23 @@ public interface BudgetDataAccessInterface {
      *
      * @param month Chosen month to analyze.
      * @param year Year relative to chosen month.
-     * @return Floating point number resembling the monthly balance.
+     * @return Returns the monthly balance.
      */
-    float getMonthlyTotal(String month, String year) throws IOException;
+    double getMonthlyTotal(String month, String year, User user) throws IOException;
 
     /**
      *
      * @param year Chosen year to analyze.
-     * @return Floating point number resembling the yearly balance.
+     * @return Returns the yearly balance.
      */
-    float getYearlyTotal(String year) throws IOException;
+    double getYearlyTotal(String year, User user) throws IOException;
 
     /**
      *
      * @param ticket Ticket being saved to database.
      * @param user Needed to find proper address to save ticket to.
      */
-    void saveTicket(Ticket ticket, User user);
+    boolean saveTicket(Ticket ticket, User user);
 
     /**
      *
